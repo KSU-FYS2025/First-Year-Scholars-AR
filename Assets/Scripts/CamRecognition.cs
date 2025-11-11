@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Splines;
 using Unity.Cinemachine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class CamRecognition : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class CamRecognition : MonoBehaviour
     public float captureInterval;
     public bool capturing = true;
     private CinemachineSplineDolly splineDolly;
+
+    [Header("Capture snapshot")]
+    public Camera cam;
+    public RawImage rawImage;
 
     private void Awake()
     {
@@ -33,6 +38,10 @@ public class CamRecognition : MonoBehaviour
         splineDolly = GetComponent<CinemachineSplineDolly>();
 
         StartCoroutine(Capture());
+
+        RenderTexture rt = new RenderTexture(1920, 1080, 24);
+        cam.targetTexture = rt;
+        rawImage.texture = rt;
     }
 
     void Update()
