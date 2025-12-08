@@ -497,11 +497,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: m_text
-      value: Elevator 1
+      value: Elevator 1st Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: m_fontSize
-      value: 10
+      value: 7.75
       objectReference: {fileID: 0}
     - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: m_fontAsset
@@ -525,7 +525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8098377307223922034, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: m_Name
-      value: Elevator 1
+      value: Elevator 1st Floor
       objectReference: {fileID: 0}
     - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: m_LocalPosition.x
@@ -573,11 +573,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: poiName
-      value: Elevator 1
+      value: Elevator 1st Floor
       objectReference: {fileID: 0}
     - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: listTitle
-      value: Elevator 1
+      value: Elevator 1st Floor
       objectReference: {fileID: 0}
     - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: identification
@@ -786,6 +786,226 @@ Transform:
   m_Children: []
   m_Father: {fileID: 371883566}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &247898321
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1329002999}
+    m_Modifications:
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_text
+      value: Reception Room
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_fontSize
+      value: 8.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937470443912541004, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937470443912541004, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922034, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_Name
+      value: Reception Room
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922034, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.7771
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.646
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 38.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6028048
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.79788876
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 105.858
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: poiName
+      value: Reception Room
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: listTitle
+      value: Reception Room
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: description
+      value: 'Room: 1123'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: identification
+      value: 16
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+--- !u!4 &247898322 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+  m_PrefabInstance: {fileID: 247898321}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &253904328
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1329002999}
+    m_Modifications:
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_text
+      value: Women's Restroom 2nd Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_fontSize
+      value: 5.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937470443912541004, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937470443912541004, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922034, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_Name
+      value: Women's Restroom 2nd Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.16715875
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.434
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.54967
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.77710885
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.6293663
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -78.007
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: poiName
+      value: Women's Restroom 2nd Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: listTitle
+      value: Women's Restroom 2nd Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: identification
+      value: 11
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+--- !u!4 &253904329 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+  m_PrefabInstance: {fileID: 253904328}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &265210513 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2482422840418843564, guid: ea16c3c8c1688234fa81a4f39339bf1b, type: 3}
@@ -1329,6 +1549,116 @@ Transform:
   - {fileID: 1125557349}
   m_Father: {fileID: 7079690332569350149}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &386423066
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1329002999}
+    m_Modifications:
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_text
+      value: Stairwell 1st Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_fontSize
+      value: 7.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937470443912541004, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937470443912541004, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922034, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_Name
+      value: Stairwell 1st Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922034, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.5160134
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.022
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.133
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.07007733
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9975416
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 188.037
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: type
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: poiName
+      value: Stairwell 1st Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: listTitle
+      value: Stairwell 1st Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: identification
+      value: 15
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+--- !u!4 &386423067 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+  m_PrefabInstance: {fileID: 386423066}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &409047024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1634,6 +1964,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 431287864}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &432442620 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+  m_PrefabInstance: {fileID: 517210827}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &457201100
 GameObject:
   m_ObjectHideFlags: 0
@@ -1800,6 +2135,222 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &479246222
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1329002999}
+    m_Modifications:
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_text
+      value: Vending Machines 1st Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_fontSize
+      value: 5.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937470443912541004, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937470443912541004, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922034, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_Name
+      value: Vending Machines 1st Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922034, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.931
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.145
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6012698
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.79904604
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 106.078
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: poiName
+      value: Vending Machines 1st Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: listTitle
+      value: Vending Machines 1st Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: identification
+      value: 17
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+--- !u!4 &479246223 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+  m_PrefabInstance: {fileID: 479246222}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &483782803
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1329002999}
+    m_Modifications:
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_text
+      value: Stairwell 3rd Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_fontSize
+      value: 7.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937470443912541004, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937470443912541004, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922034, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_Name
+      value: Stairwell 3rd Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.137
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.147
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.899
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6264435
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.77946687
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 102.424
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: type
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: poiName
+      value: Stairwell 3rd Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: listTitle
+      value: Stairwell 3rd Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: identification
+      value: 13
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+--- !u!4 &483782804 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+  m_PrefabInstance: {fileID: 483782803}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &493135769
 GameObject:
   m_ObjectHideFlags: 0
@@ -1846,6 +2397,112 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1950733358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &498439757
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1329002999}
+    m_Modifications:
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_text
+      value: Men's Restroom 1st Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_fontSize
+      value: 5.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937470443912541004, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937470443912541004, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922034, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_Name
+      value: Men's Restroom 1st Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.126
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.762
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.015
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99624455
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.08658459
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 9.934
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: poiName
+      value: Men's Restroom 1st Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: listTitle
+      value: Men's Restroom 1st Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: identification
+      value: 9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+--- !u!4 &498439758 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+  m_PrefabInstance: {fileID: 498439757}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &511996032
 GameObject:
   m_ObjectHideFlags: 0
@@ -1943,6 +2600,107 @@ Transform:
   m_Children: []
   m_Father: {fileID: 371883566}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &517210827
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1329002999}
+    m_Modifications:
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_text
+      value: Men's Restroom 3rd Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_fontSize
+      value: 5.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937470443912541004, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937470443912541004, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922034, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_Name
+      value: Men's Restroom 3rd Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.649
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.055999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.411
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6264435
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.77946687
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 102.424
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: poiName
+      value: Men's Restroom 3rd Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: listTitle
+      value: Men's Restroom 3rd Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: identification
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
 --- !u!1 &522511216 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1367575963433742180, guid: ea16c3c8c1688234fa81a4f39339bf1b, type: 3}
@@ -2699,14 +3457,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: m_text
-      value: 'Elevator 2
-
-
-'
+      value: Elevator 2nd Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: m_fontSize
-      value: 10
+      value: 7.45
       objectReference: {fileID: 0}
     - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: m_fontAsset
@@ -2730,7 +3485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8098377307223922034, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: m_Name
-      value: Elevator 2
+      value: Elevator 2nd Floor
       objectReference: {fileID: 0}
     - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2778,11 +3533,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: poiName
-      value: Elevator 2
+      value: Elevator 2nd Floor
       objectReference: {fileID: 0}
     - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: listTitle
-      value: Elevator 2
+      value: Elevator 2nd Floor
       objectReference: {fileID: 0}
     - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: identification
@@ -3413,6 +4168,112 @@ MonoBehaviour:
   m_stopNavigationButton: 256
   m_poiListUI: {fileID: 939250047}
   m_cameraRig: {fileID: 7079690332569786865}
+--- !u!1001 &802601978
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1329002999}
+    m_Modifications:
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_text
+      value: Men's Restroom 2nd Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_fontSize
+      value: 5.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937470443912541004, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937470443912541004, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922034, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_Name
+      value: Men's Restroom 2nd Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.3131638
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.677
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.037
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.81089705
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5851888
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -71.633
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: poiName
+      value: Men's Restroom 2nd Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: listTitle
+      value: Men's Restroom 2nd Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: identification
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+--- !u!4 &802601979 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+  m_PrefabInstance: {fileID: 802601978}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &817264698 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4869577802921675287, guid: ea16c3c8c1688234fa81a4f39339bf1b, type: 3}
@@ -3844,7 +4705,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: m_text
-      value: South Entrance 2nd Floor
+      value: North Entrance 2nd Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: m_fontSize
@@ -3864,7 +4725,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8098377307223922034, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: m_Name
-      value: South Entrance 2nd Floor
+      value: North Entrance 2nd Floor
       objectReference: {fileID: 0}
     - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3912,11 +4773,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: poiName
-      value: South Entrance 2nd Floor
+      value: North Entrance 2nd Floor
       objectReference: {fileID: 0}
     - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: listTitle
-      value: South Entrance 2nd Floor
+      value: North Entrance 2nd Floor
       objectReference: {fileID: 0}
     - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: identification
@@ -4420,6 +5281,112 @@ Transform:
   - {fileID: 8601944128682662879}
   m_Father: {fileID: 939250048}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1033264645
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1329002999}
+    m_Modifications:
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_text
+      value: Women's Restroom 3rd Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_fontSize
+      value: 5.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937470443912541004, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937470443912541004, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922034, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_Name
+      value: Women's Restroom 3rd Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.1034946
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.055999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12.894818
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99151164
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.1300179
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 14.941
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: poiName
+      value: Women's Restroom 3rd Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: listTitle
+      value: Women's Restroom 3rd Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: identification
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+--- !u!4 &1033264646 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+  m_PrefabInstance: {fileID: 1033264645}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1055757393
 GameObject:
   m_ObjectHideFlags: 0
@@ -4620,9 +5587,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: m_text
-      value: 'North Entrance 1st Floor
-
-'
+      value: South Entrance 1st Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: m_fontSize
@@ -4642,7 +5607,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8098377307223922034, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: m_Name
-      value: North Entrance 1st Floor
+      value: South Entrance 1st Floor
       objectReference: {fileID: 0}
     - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4690,11 +5655,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: poiName
-      value: North Entrance 1st Floor
+      value: South Entrance 1st Floor
       objectReference: {fileID: 0}
     - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: listTitle
-      value: North Entrance 1st Floor
+      value: South Entrance 1st Floor
       objectReference: {fileID: 0}
     - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: identification
@@ -5787,6 +6752,18 @@ Transform:
   - {fileID: 539394613}
   - {fileID: 1891066045}
   - {fileID: 1981509691}
+  - {fileID: 1033264646}
+  - {fileID: 802601979}
+  - {fileID: 498439758}
+  - {fileID: 432442620}
+  - {fileID: 253904329}
+  - {fileID: 1673086901}
+  - {fileID: 483782804}
+  - {fileID: 1387509126}
+  - {fileID: 386423067}
+  - {fileID: 247898322}
+  - {fileID: 479246223}
+  - {fileID: 1488295727}
   m_Father: {fileID: 2021026515}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1337900381
@@ -5891,6 +6868,112 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3717527311161463074, guid: 962a9dc8cb78ee74ea90fdf7d792261d, type: 3}
   m_PrefabInstance: {fileID: 1362587900}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1387509125
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1329002999}
+    m_Modifications:
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_text
+      value: Stairwell 2nd Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_fontSize
+      value: 7.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937470443912541004, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937470443912541004, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922034, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_Name
+      value: Stairwell 2nd Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.079659
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.0299312
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.80884916
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5880162
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 287.967
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: type
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: poiName
+      value: Stairwell 2nd Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: listTitle
+      value: Stairwell 2nd Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: identification
+      value: 14
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+--- !u!4 &1387509126 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+  m_PrefabInstance: {fileID: 1387509125}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1402030787
 GameObject:
@@ -6260,6 +7343,118 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1001 &1488295726
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1329002999}
+    m_Modifications:
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_text
+      value: 'Vending Machine 2nd Floor
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_fontSize
+      value: 5.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937470443912541004, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937470443912541004, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922034, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_Name
+      value: Vending Machine 2nd Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922034, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.047
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.651
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 11.584
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6012698
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.79904604
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 106.078
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: poiName
+      value: Vending Machine 2nd Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: listTitle
+      value: Vending Machine 2nd Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: identification
+      value: 18
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+--- !u!4 &1488295727 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+  m_PrefabInstance: {fileID: 1488295726}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1509458430
 GameObject:
   m_ObjectHideFlags: 0
@@ -7282,6 +8477,116 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8743731163281776065, guid: 040567cd4431b484e9999e28a102d366, type: 3}
   m_PrefabInstance: {fileID: 1669997183}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1673086900
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1329002999}
+    m_Modifications:
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_text
+      value: Women's Restroom 1st Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_fontSize
+      value: 5.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937470443912541004, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937470443912541004, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922034, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_Name
+      value: Women's Restroom 1st Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.44656792
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.812
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.871428
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8136845
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5813068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -71.085
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: poiName
+      value: Women's Restroom 1st Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: listTitle
+      value: Women's Restroom 1st Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+      propertyPath: identification
+      value: 12
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+--- !u!4 &1673086901 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
+  m_PrefabInstance: {fileID: 1673086900}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1728653816
 GameObject:
@@ -8912,11 +10217,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: m_text
-      value: Elevator 3
+      value: Elevator 3rd Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: m_fontSize
-      value: 10
+      value: 7.65
       objectReference: {fileID: 0}
     - target: {fileID: 4215192899107776191, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: m_fontAsset
@@ -8940,7 +10245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8098377307223922034, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: m_Name
-      value: Elevator 3
+      value: Elevator 3rd Floor
       objectReference: {fileID: 0}
     - target: {fileID: 8098377307223922035, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8988,11 +10293,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: poiName
-      value: Elevator 3
+      value: Elevator 3rd Floor
       objectReference: {fileID: 0}
     - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: listTitle
-      value: Elevator 3
+      value: Elevator 3rd Floor
       objectReference: {fileID: 0}
     - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: identification
