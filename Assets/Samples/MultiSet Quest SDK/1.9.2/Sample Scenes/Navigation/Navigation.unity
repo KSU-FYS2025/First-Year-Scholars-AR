@@ -9422,7 +9422,7 @@ GameObject:
   m_Component:
   - component: {fileID: 699719809}
   - component: {fileID: 699719810}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14516,7 +14516,8 @@ GameObject:
   - component: {fileID: 1055757398}
   - component: {fileID: 1055757397}
   - component: {fileID: 1055757396}
-  m_Layer: 0
+  - component: {fileID: 1055757399}
+  m_Layer: 3
   m_Name: CanvasRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14614,6 +14615,34 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 1
+--- !u!114 &1055757399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055757393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee10491ef6d5d1d49a270cf6b09bdc19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enableMipmapping: 0
+  _dynamicResolution: 1
+  _redrawResolutionThreshold: 2147483647
+  rectTransform: {fileID: 1055757394}
+  maxTextureSize: 2048
+  manualRedraw: 0
+  renderInterval: 1
+  renderIntervalFrameOffset: 0
+  expensive: 0
+  layer: 5
+  opacity: 2
+  shape: 0
+  curveRadius: 1
+  overlapMask: 0
+  overlayType: 1
+  _overlayEnabled: 1
 --- !u!1001 &1085430721
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15962,10 +15991,10 @@ MonoBehaviour:
     style: default
     speed: 100
     pitch: 100
-  - SettingsId: WIT$CARTOON BABY
+  - SettingsId: WIT$HOLLYWOOD
     PrependedText: 
     AppendedText: 
-    voice: wit$Cartoon Baby
+    voice: wit$Hollywood
     style: default
     speed: 100
     pitch: 100
@@ -18982,7 +19011,7 @@ GameObject:
   - component: {fileID: 1447792884}
   - component: {fileID: 1447792883}
   - component: {fileID: 1447792882}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Background
   m_TagString: QDSUIToggleButton
   m_Icon: {fileID: 0}
@@ -23314,7 +23343,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &1853220913
 Canvas:
   m_ObjectHideFlags: 0
@@ -23324,7 +23353,7 @@ Canvas:
   m_GameObject: {fileID: 1853220910}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 2
+  m_RenderMode: 0
   m_Camera: {fileID: 7079690332568832523}
   m_PlaneDistance: 2
   m_PixelPerfect: 0
@@ -23346,8 +23375,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1853220910}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2}
-  m_LocalScale: {x: 0.0037037036, y: 0.0037037036, z: 0.0037037036}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 780215175}
@@ -23356,8 +23385,8 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2351.5386, y: 1080}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &1853220915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26547,7 +26576,7 @@ GameObject:
   - component: {fileID: 2052231851}
   - component: {fileID: 2052231853}
   - component: {fileID: 2052231852}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Stop Button
   m_TagString: QDSUIToggleButton
   m_Icon: {fileID: 0}
@@ -28144,7 +28173,7 @@ GameObject:
   - component: {fileID: 646410155596227189}
   - component: {fileID: 2707047056877109832}
   - component: {fileID: 1472748174107542426}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28163,7 +28192,7 @@ GameObject:
   - component: {fileID: 3039546493439583255}
   - component: {fileID: 4386022501576830532}
   - component: {fileID: 4579056774762112088}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: phone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29867,7 +29896,7 @@ GameObject:
   - component: {fileID: 1138613815096599136}
   - component: {fileID: 1138613815096364608}
   - component: {fileID: 1138613815090725760}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spinner_6_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29887,7 +29916,7 @@ GameObject:
   - component: {fileID: 1138613815096599138}
   - component: {fileID: 1138613815096364610}
   - component: {fileID: 1138613815090725762}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spinner_6_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29907,7 +29936,7 @@ GameObject:
   - component: {fileID: 1138613815096599140}
   - component: {fileID: 1138613815096364612}
   - component: {fileID: 1138613815090725764}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spinner_6_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29927,7 +29956,7 @@ GameObject:
   - component: {fileID: 1138613815096599142}
   - component: {fileID: 1138613815096364614}
   - component: {fileID: 1138613815090725766}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spinner_6_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29943,7 +29972,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1138613815090830634}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Spinner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29963,7 +29992,7 @@ GameObject:
   - component: {fileID: 1138613815096599152}
   - component: {fileID: 1138613815096364624}
   - component: {fileID: 1138613815090725776}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spinner_6_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29983,7 +30012,7 @@ GameObject:
   - component: {fileID: 1138613815096599154}
   - component: {fileID: 1138613815096364626}
   - component: {fileID: 1138613815090725778}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spinner_6_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30003,7 +30032,7 @@ GameObject:
   - component: {fileID: 1138613815096599156}
   - component: {fileID: 1138613815096364628}
   - component: {fileID: 1138613815090725780}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spinner_6_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30023,7 +30052,7 @@ GameObject:
   - component: {fileID: 1138613815096599158}
   - component: {fileID: 1138613815096364630}
   - component: {fileID: 1138613815090725782}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spinner_6_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30043,7 +30072,7 @@ GameObject:
   - component: {fileID: 1138613815096599160}
   - component: {fileID: 1138613815096364632}
   - component: {fileID: 1138613815090725784}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spinner_6_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30063,7 +30092,7 @@ GameObject:
   - component: {fileID: 1138613815096599162}
   - component: {fileID: 1138613815096364634}
   - component: {fileID: 1138613815090725786}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spinner_6_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30083,7 +30112,7 @@ GameObject:
   - component: {fileID: 1138613815096599164}
   - component: {fileID: 1138613815096364636}
   - component: {fileID: 1138613815090725788}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spinner_6_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30103,7 +30132,7 @@ GameObject:
   - component: {fileID: 1138613815096599166}
   - component: {fileID: 1138613815096364638}
   - component: {fileID: 1138613815090725790}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spinner_6_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30225,7 +30254,7 @@ GameObject:
   - component: {fileID: 6514182829391201324}
   - component: {fileID: 4939353730637420452}
   - component: {fileID: 5693708072399708811}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LoaderPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30523,7 +30552,7 @@ GameObject:
   - component: {fileID: 3233801835461463346}
   - component: {fileID: 2239367160844529874}
   - component: {fileID: 4218392556005944657}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: InfoText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45651,7 +45680,7 @@ GameObject:
   m_Component:
   - component: {fileID: 333387643291141502}
   - component: {fileID: 3129866210732035419}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: AnimationLayout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46594,7 +46623,7 @@ GameObject:
   - component: {fileID: 7183386364176771529}
   - component: {fileID: 489865732533515338}
   - component: {fileID: 6323028265000838441}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: DeviceAnimation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46680,7 +46709,7 @@ GameObject:
   - component: {fileID: 3779678432816083266}
   - component: {fileID: 937673531441264317}
   - component: {fileID: 3695352343726449626}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LoadingText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47476,7 +47505,7 @@ GameObject:
   - component: {fileID: 7164135511365888673}
   - component: {fileID: 5530581867917236597}
   - component: {fileID: 7657274195275716038}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LoadingText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47681,7 +47710,7 @@ GameObject:
   - component: {fileID: 7759534231080222446}
   - component: {fileID: 8452703937073379421}
   - component: {fileID: 2583822114688454893}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ToastPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49086,7 +49115,7 @@ GameObject:
   - component: {fileID: 545949692415386900}
   - component: {fileID: 7691906457907294396}
   - component: {fileID: 7300709686382800460}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63277,7 +63306,7 @@ GameObject:
   - component: {fileID: 6804924777761438657}
   - component: {fileID: 3632710467980045479}
   - component: {fileID: 3282799968373453982}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RawImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78146,7 +78175,7 @@ GameObject:
   - component: {fileID: 6174978518212442961}
   - component: {fileID: 9015592604079233589}
   - component: {fileID: 5494785600095912702}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Toast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
