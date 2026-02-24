@@ -47,11 +47,34 @@ MonoBehaviour:
     isPrivate: 1
     createdAt: 2026-02-17T11:56:19-0800
     trainingStatus: 1
-    lastTrainDuration: 0
-    lastTrainedAt: 1969-12-31T16:00:00-0800
-    nextTrainAt: 1969-12-31T16:00:00-0800
-    intents: []
-    entities: []
+    lastTrainDuration: 377
+    lastTrainedAt: 2026-02-18T04:44:38-0800
+    nextTrainAt: 2026-02-18T04:38:21-0800
+    intents:
+    - id: 1353182859906394
+      name: wake_word
+      entities:
+      - name: wake_word:wake_word
+        id: 929819289669792
+    entities:
+    - name: wake_word
+      id: 2493547214380954
+      lookups:
+      - free-text
+      - keywords
+      roles:
+      - name: wake_word
+        id: 929819289669792
+      keywords:
+      - keyword: ey quest
+        synonyms:
+        - ey quest
+      - keyword: hey quest
+        synonyms:
+        - hey quest
+      - keyword: hey west
+        synonyms:
+        - hey west
     traits: []
     versionTags: []
     voices:

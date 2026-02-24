@@ -18,6 +18,9 @@ public class VoiceManager : MonoBehaviour
 
     private bool _voiceCommandReady;
 
+    [Header("WebSocket")]
+    public WebSocketClient webSocketClient;
+
     private void Awake()
     {
         appVoiceExperience.VoiceEvents.OnRequestCompleted.AddListener(ReactivateVoice);
@@ -54,16 +57,30 @@ public class VoiceManager : MonoBehaviour
         wakeWordDetected?.Invoke();
     }
 
+    // While the user is still speaking
     private void OnPartialTranscription(string transcription)
     {
         if (!_voiceCommandReady) return;
         transcriptionText.text = transcription;
     }
 
+    // When the system determines the user has finished speaking
     private void OnFullTranscription(string transcription)
     {
         if (!_voiceCommandReady) return;
         _voiceCommandReady = false;
         completeTranscription?.Invoke(transcription);
+        webSocketClient.SendText(transcriptionText.text);
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            // TEST
+            webSocketClient.SendText(transcriptionText.text);
+            Debug.Log("Send");
+            // TEST
+        }
     }
 }
