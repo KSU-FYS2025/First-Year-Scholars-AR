@@ -39,6 +39,21 @@ public class WebSocketClient : MonoBehaviour
         };
 
         ws.Connect();
+
+            // Check the number of available microphone devices
+            if (Microphone.devices.Length > 0)
+            {
+                Debug.Log("Microphone detected. Available devices:");
+                // Iterate through and print the names of all detected microphones
+                foreach (string device in Microphone.devices)
+                {
+                    Debug.Log("- " + device);
+                }
+            }
+            else
+            {
+                Debug.LogWarning("No microphone detected on this system.");
+            }
     }
 
     void Update()
