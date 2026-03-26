@@ -133,6 +133,7 @@ public class VoiceManager : MonoBehaviour
         {
             realtimeQueryManager.manualQuery = transcriptionText.text;
             realtimeQueryManager.SendManualQuery();
+            CloseSTT();
         }
     }
 
