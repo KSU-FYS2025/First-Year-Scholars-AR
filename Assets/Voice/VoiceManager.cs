@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.Android;
 
 public class VoiceManager : MonoBehaviour
 {/*
@@ -102,10 +103,23 @@ public class VoiceManager : MonoBehaviour
         if (!appVoiceExperience) appVoiceExperience = GetComponent<AppVoiceExperience>();
     }
 
+    private void Start()
+    {
+        if (!Permission.HasUserAuthorizedPermission(Permission.Microphone))
+        {
+            Permission.RequestUserPermission(Permission.Microphone);
+        }
+    }
+
     public void Activate()
     {
         if (!listening)
         {
+            if (!Permission.HasUserAuthorizedPermission(Permission.Microphone))
+            {
+                Permission.RequestUserPermission(Permission.Microphone);
+            }
+
             appVoiceExperience.Activate();
             listening = true;
             recordBtn.GetComponent<Image>().color = Color.green;
