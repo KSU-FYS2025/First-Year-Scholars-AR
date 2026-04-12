@@ -1,10 +1,11 @@
+using System;
+using System.Collections;
+using System.Collections.Concurrent;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 using WebSocketSharp;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.Concurrent;
 
 public class RealtimeQueryManager : MonoBehaviour
 {
@@ -28,6 +29,9 @@ public class RealtimeQueryManager : MonoBehaviour
     
     // Track spawned line visualization objects
     private List<GameObject> activePathVisualizations = new List<GameObject>();
+
+    [Header("UI")]
+    [SerializeField] private TextMeshProUGUI backendText;
 
     [Serializable]
     public class QueryRequest
@@ -172,6 +176,7 @@ public class RealtimeQueryManager : MonoBehaviour
         while (responseQueue.TryDequeue(out string data))
         {
             Debug.Log("[RealtimeQueryManager] Processing Response on Main Thread: " + data);
+            backendText.text = "Processing";
             lastResponse = data;
             ProcessResponse(data);
         }
@@ -191,6 +196,7 @@ public class RealtimeQueryManager : MonoBehaviour
         if (ws == null || !ws.IsAlive)
         {
             Debug.LogWarning("[RealtimeQueryManager] Not connected. Attempting to reconnect...");
+            backendText.text = "Navigation failed";
             Connect();
             if (ws == null || !ws.IsAlive) return;
         }
@@ -285,6 +291,8 @@ public class RealtimeQueryManager : MonoBehaviour
                             
                             // Set the next path to start from this destination!
                             currentStartPos = validEnd;
+
+                            backendText.text = "Destination found!";
                         }
                         else
                         {
@@ -301,6 +309,7 @@ public class RealtimeQueryManager : MonoBehaviour
         catch (Exception ex)
         {
             Debug.LogError("[RealtimeQueryManager] Failed to parse response: " + ex.Message);
+            backendText.text = "Navigation failed";
         }
     }
 
@@ -480,19 +489,31 @@ public class RealtimeQueryManager : MonoBehaviour
         {
             case "navigation":
                 if (poiCache.ContainsKey(targetID))
+                {
                     Debug.Log($"[RealtimeQueryManager] Logic: Start Pathfinding to {poiCache[targetID].gameObject.name}");
+                    backendText.text = "Destination found!";
+                }
                 else
+                {
                     Debug.LogWarning($"[RealtimeQueryManager] Action Target ID {targetID} not found in scene cache.");
+                    backendText.text = "Destination not found";
+                }
                 break;
             case "inquiry":
                 if (poiCache.ContainsKey(targetID))
+                {
                     Debug.Log($"[RealtimeQueryManager] Logic: Show Details for {poiCache[targetID].gameObject.name}");
+                    backendText.text = lastResponse;
+                }
                 break;
             case "greeting":
                 Debug.Log("[RealtimeQueryManager] Logic: Play Social Animation/Audio");
                 break;
             case "others":
-                Debug.Log("[RealtimeQueryManager] Logic: Handle General Query");
+                {
+                    Debug.Log("[RealtimeQueryManager] Logic: Handle General Query");
+                    backendText.text = lastResponse;
+                }
                 break;
         }
     }

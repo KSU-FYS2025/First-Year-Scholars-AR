@@ -2,7 +2,7 @@
 - Project name: FYS_AR_UNITY
 - Unity version: Unity 6000.0.61f1
 - Active game object:
-  - Name: App Voice Experience
+  - Name: Utterance
   - Tag: Untagged
-  - Layer: Default
+  - Layer: UI
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

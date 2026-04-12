@@ -93,6 +93,7 @@ public class VoiceManager : MonoBehaviour
     [SerializeField] private AppVoiceExperience appVoiceExperience;
     [SerializeField] private WitResponseMatcher responseMatcher;
     [SerializeField] private TextMeshProUGUI transcriptionText;
+    [SerializeField] private TextMeshProUGUI backendText;
     [SerializeField] private TextMeshProUGUI sttInfoText;
     [SerializeField] private RealtimeQueryManager realtimeQueryManager;
 
@@ -147,7 +148,7 @@ public class VoiceManager : MonoBehaviour
         {
             realtimeQueryManager.manualQuery = transcriptionText.text;
             realtimeQueryManager.SendManualQuery();
-            CloseSTT();
+            //CloseSTT();
         }
     }
 
@@ -159,6 +160,7 @@ public class VoiceManager : MonoBehaviour
 
     public void CloseSTT()
     {
+        backendText.text = "";
         sttContentUI.SetActive(false);
         contentUI.SetActive(true);
     }
