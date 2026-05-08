@@ -1,6 +1,6 @@
 # First-Year-Scholars-AR
 
-Developed by KSU's first-year scholars 2025-2026 "Taking Augmented Reality Beyond the Lab" to navigates around the Atrium building using Unity's augmented reality system. 
+Developed by KSU's first-year scholars 2025-2026 "Taking Augmented Reality Beyond the Lab" to navigates inside the Atrium building using Unity's augmented reality system. 
 
 ## Getting Started
 
@@ -20,7 +20,7 @@ https://github.com/KSU-FYS2025/First-Year-Scholars-AR.git
 
 ### 3. Setup The Project
 
-- Search for the scene "Atrium Navigation" and open it
+- Search for the scene "Atrium Navigation" and open it. (Assets/Samples/MultiSet Quest SDK/1.9.2/Sample Scenes/Naigation/Atrium Navigation.unity) 
 
  
 - [OPTIONAL] If you have your own map/mapsets then complete the following:
@@ -30,6 +30,7 @@ https://github.com/KSU-FYS2025/First-Year-Scholars-AR.git
 - [OPTIONAL] Paste your map or mapset code into "LocalizationManager"
 
 - Find "MapMeshDownloader" -> press download mesh and wait for the scene to complete downloading the meshes
+- If integrating an LLM into the STT system, make sure to enter the backend URL in the "RealTimeQuery" object.
   
 ### 4. How It Works
 
