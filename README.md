@@ -32,7 +32,7 @@ https://github.com/KSU-FYS2025/First-Year-Scholars-AR.git
 - Find "MapMeshDownloader" -> press download mesh and wait for the scene to complete downloading the meshes
 
 - Navigating using dictation is not required as there is already a simple interactable UI.
-- If integrating an LLM for the dictation aspect, you can set up your own networking system for the dictation or follow this git repo for the backend located in the demo branch [github.com/KSU-FYS2025/rag-prototype/tree/demo](github.com/KSU-FYS2025/rag-prototype/tree/demo)
+- If integrating an LLM for the dictation aspect, you can set up your own networking system for the dictation or follow this git repo for the backend located in the demo branch [https://github.com/KSU-FYS2025/rag-prototype/tree/demo](https://github.com/KSU-FYS2025/rag-prototype/tree/demo)
 - Make sure to enter the backend URL in the "RealTimeQuery" object.
   
 ### 4. How It Works
