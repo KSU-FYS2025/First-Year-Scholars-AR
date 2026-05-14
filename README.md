@@ -1,6 +1,12 @@
 # First-Year-Scholars-AR
 
-Developed by KSU's first-year scholars 2025-2026 "Taking Augmented Reality Beyond the Lab" to navigates inside the Atrium building using Unity's augmented reality system. 
+This Unity project is developed by KSU's first-year scholars 2025-2026 "Taking Augmented Reality Beyond the Lab" to navigates inside the Atrium building on the KSU's Marietta campus using the Meta Quest headset. 
+
+# Key Features
+
+- Localizes the headset's location to real-world position in the Atrium building.
+- Pathfinding through essential locations.
+- Easy-to-use navigation UI and dictation system.
 
 ## Getting Started
 
@@ -39,4 +45,4 @@ https://github.com/KSU-FYS2025/First-Year-Scholars-AR.git
 
 - Using the meta quest controller, press the "Open list button" (B by default) to access the points of interest in the Atrium building
 - Search for a destination of your choice and simply press it to generate an arrow guiding to your destination and an approximate distance
-- To navigate using speech-to-text: press the microphone button located at the top of the navigation list UI and follow the on-screen instructions
+- To navigate using dictation: make sure the application have access to the microphone on the Meta Quest headset. Then press the microphone button located at the top of the navigation list UI and follow the on-screen instructions
