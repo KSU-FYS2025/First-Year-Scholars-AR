@@ -25,7 +25,7 @@ https://github.com/KSU-FYS2025/First-Year-Scholars-AR.git
  
 - [OPTIONAL] If you have your own map/mapsets then complete the following:
 - [OPTIONAL] Find "MultisetSdkManager" in the scene and open the MultiSet config
-- [OPTIONAL] If not already, create a MultiSet account in the developer portal: [developer.multiset.ai/auth/sign-up](developer.multiset.ai/auth/sign-up)
+- [OPTIONAL] If not already, create a MultiSet account in the developer portal: [https://developer.multiset.ai/auth/sign-up](https://developer.multiset.ai/auth/sign-up)
 - [OPTIONAL] Paste the client ID and client secret into the Unity config and verify credentials
 - [OPTIONAL] Paste your map or mapset code into "LocalizationManager"
 
