@@ -18,7 +18,7 @@ Developed by KSU's first-year scholars 2025-2026 "Taking Augmented Reality Beyon
 https://github.com/KSU-FYS2025/First-Year-Scholars-AR.git
 ```
 
-### 3. Setup The Project
+### 3. Set up The Project
 
 - Search for the scene "Atrium Navigation" and open it. (Assets/Samples/MultiSet Quest SDK/1.9.2/Sample Scenes/Naigation/Atrium Navigation.unity) 
 
@@ -30,7 +30,10 @@ https://github.com/KSU-FYS2025/First-Year-Scholars-AR.git
 - [OPTIONAL] Paste your map or mapset code into "LocalizationManager"
 
 - Find "MapMeshDownloader" -> press download mesh and wait for the scene to complete downloading the meshes
-- If integrating an LLM into the STT system, make sure to enter the backend URL in the "RealTimeQuery" object.
+
+- Navigating using dictation is not required as there is already a simple interactable UI.
+- If integrating an LLM for the dictation aspect, you can set up your own networking system for the dictation or follow this git repo for the backend located in the demo branch [https://github.com/KSU-FYS2025/rag-prototype/tree/demo](https://github.com/KSU-FYS2025/rag-prototype/tree/demo)
+- Make sure to enter the backend URL in the "RealTimeQuery" object.
   
 ### 4. How It Works
 
