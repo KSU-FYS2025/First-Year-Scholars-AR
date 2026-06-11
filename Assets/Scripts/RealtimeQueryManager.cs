@@ -166,7 +166,7 @@ public class RealtimeQueryManager : MonoBehaviour
     }
 
     [Serializable]
-    class FinalResponse
+    class AgentResponse
     {
         public string response;
         public Action[] actions;
