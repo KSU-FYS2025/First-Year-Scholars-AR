@@ -335,7 +335,7 @@ public class RealtimeQueryManager : MonoBehaviour
         isQuerying = false;
         try
         {
-            TriageResponse response = JsonUtility.FromJson<TriageResponse>(json);
+            AgentResponse response = JsonConvert.DeserializeObject<AgentResponse>(json);
             
             if (!string.IsNullOrEmpty(response.response))
             {
