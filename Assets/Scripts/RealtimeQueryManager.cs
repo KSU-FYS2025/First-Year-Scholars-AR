@@ -174,10 +174,7 @@ public class RealtimeQueryManager : MonoBehaviour
 
     public class ActionConverter : JsonConverter
     {
-        public override bool CanConvert(Type objectType)
-        {
-            return objectType == typeof(Action);
-        }
+        public override bool CanConvert(Type objectType) => objectType == typeof(Action);
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
