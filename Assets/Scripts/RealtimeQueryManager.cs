@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections;
 using System.Collections.Concurrent;
@@ -33,79 +35,174 @@ public class RealtimeQueryManager : MonoBehaviour
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI backendText;
 
+    //[Serializable]
+    //public class QueryRequest
+    //{
+    //    public string query;
+    //    public UserContext context;
+    //}
+
+    //[Serializable]
+    //public class UserContext
+    //{
+    //    public float[] position;
+    //    public float[] rotation;
+    //    public string scene;
+    //}
+
+    //[Serializable]
+    //public class TriageResponse
+    //{
+    //    public string type;
+    //    public string response; // For greetings/inquiry
+    //    public List<TargetInfo> targets;
+    //    public List<AIAction> actions; // New: Agentic actions
+    //    public string message; // For errors or status
+    //}
+
+    //[Serializable]
+    //public class AIAction
+    //{
+    //    public string cmd;
+    //    public int id;
+    //    public string target_name;
+    //    public string text;
+    //    public string reason;
+    //}
+
+    //[Serializable]
+    //public class TargetInfo
+    //{
+    //    public string category;
+    //    public string semantics;
+    //    public string description;
+    //    public List<POIResult> poi_results;
+    //}
+
+    //[Serializable]
+    //public class POIResult
+    //{
+    //    public int id;
+    //    public string name;
+    //}
+
+    //[Serializable]
+    //public class VerificationRequest
+    //{
+    //    public string type;
+    //    public string original_type;
+    //    public string query;
+    //    public List<VerificationTarget> targets;
+    //}
+
+    //[Serializable]
+    //public class VerificationTarget
+    //{
+    //    public string semantics;
+    //    public List<VerificationPoi> poi_results;
+    //}
+
+    //[Serializable]
+    //public class VerificationPoi
+    //{
+    //    public int id;
+    //    public string name;
+    //    public float distance;
+    //}
+
     [Serializable]
-    public class QueryRequest
+    [JsonConverter(typeof(ActionConverter))]
+    class Action
     {
-        public string query;
-        public UserContext context;
+        public int order;
+        [JsonProperty("cmd")]
+        public virtual string Cmd { get; }
     }
 
     [Serializable]
-    public class UserContext
+    class NavigationAction : Action
     {
-        public float[] position;
-        public float[] rotation;
-        public string scene;
-    }
+        [JsonProperty("cmd")]
+        public override string Cmd => "navigation";
 
-    [Serializable]
-    public class TriageResponse
-    {
-        public string type;
-        public string response; // For greetings/inquiry
-        public List<TargetInfo> targets;
-        public List<AIAction> actions; // New: Agentic actions
-        public string message; // For errors or status
-    }
-
-    [Serializable]
-    public class AIAction
-    {
-        public string cmd;
         public int id;
-        public string target_name;
+        public string target_label;
+    }
+
+    [Serializable]
+    class ResolveNearestAction : Action
+    {
+        [JsonProperty("cmd")]
+        public override string Cmd => "resolve_nearest";
+        public int[] candidate_ids;
+        public string target_label;
+    }
+
+    [Serializable]
+    class AnswerAction : Action
+    {
+        [JsonProperty("cmd")]
+        public override string Cmd => "answer";
         public string text;
+        public int[] source_ids;
+    }
+
+    [Serializable]
+    class ClarificationSuggestion
+    {
+        public int id;
+        public string name;
+    }
+
+    [Serializable]
+    class ClarifyAction : Action
+    {
+        [JsonProperty("cmd")]
+        public override string Cmd => "clarify";
+        public string unresolved_target;
         public string reason;
+        public ClarificationSuggestion[] suggestions;
+        public string prompt;
     }
 
     [Serializable]
-    public class TargetInfo
+    class FinalResponse
     {
-        public string category;
-        public string semantics;
-        public string description;
-        public List<POIResult> poi_results;
+        public string response;
+        public Action[] actions;
     }
 
-    [Serializable]
-    public class POIResult
+    public class ActionConverter : JsonConverter
     {
-        public int id;
-        public string name;
-    }
+        public override bool CanConvert(Type objectType)
+        {
+            return objectType == typeof(Action);
+        }
 
-    [Serializable]
-    public class VerificationRequest
-    {
-        public string type;
-        public string original_type;
-        public string query;
-        public List<VerificationTarget> targets;
-    }
+        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        {
+            JObject jo = JObject.Load(reader);
+            string cmd = jo["cmd"].Value<string>();
 
-    [Serializable]
-    public class VerificationTarget
-    {
-        public string semantics;
-        public List<VerificationPoi> poi_results;
-    }
+            Action action = cmd switch
+            {
+                "navigation" => new NavigationAction(),
+                "resolve_nearest" => new ResolveNearestAction(),
+                "answer" => new AnswerAction(),
+                "clarify" => new ClarifyAction(),
+                _ => throw new Exception($"Unexpected cmd found!: {cmd}")
+            };
 
-    [Serializable]
-    public class VerificationPoi
-    {
-        public int id;
-        public string name;
-        public float distance;
+            serializer.Populate(jo.CreateReader(), action);
+            return action;
+        }
+
+        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool CanWrite => false;
     }
 
     private void Start()
