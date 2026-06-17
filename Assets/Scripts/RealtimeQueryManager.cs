@@ -35,80 +35,80 @@ public class RealtimeQueryManager : MonoBehaviour
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI backendText;
 
-    //[Serializable]
-    //public class QueryRequest
-    //{
-    //    public string query;
-    //    public UserContext context;
-    //}
+    [Serializable]
+    public class QueryRequest
+    {
+        public string query;
+        public UserContext context;
+    }
 
-    //[Serializable]
-    //public class UserContext
-    //{
-    //    public float[] position;
-    //    public float[] rotation;
-    //    public string scene;
-    //}
+    [Serializable]
+    public class UserContext
+    {
+        public float[] position;
+        public float[] rotation;
+        public string scene;
+    }
 
-    //[Serializable]
-    //public class TriageResponse
-    //{
-    //    public string type;
-    //    public string response; // For greetings/inquiry
-    //    public List<TargetInfo> targets;
-    //    public List<AIAction> actions; // New: Agentic actions
-    //    public string message; // For errors or status
-    //}
+    [Serializable]
+    public class TriageResponse
+    {
+        public string type;
+        public string response; // For greetings/inquiry
+        public List<TargetInfo> targets;
+        public List<AIAction> actions; // New: Agentic actions
+        public string message; // For errors or status
+    }
 
-    //[Serializable]
-    //public class AIAction
-    //{
-    //    public string cmd;
-    //    public int id;
-    //    public string target_name;
-    //    public string text;
-    //    public string reason;
-    //}
+    [Serializable]
+    public class AIAction
+    {
+        public string cmd;
+        public int id;
+        public string target_name;
+        public string text;
+        public string reason;
+    }
 
-    //[Serializable]
-    //public class TargetInfo
-    //{
-    //    public string category;
-    //    public string semantics;
-    //    public string description;
-    //    public List<POIResult> poi_results;
-    //}
+    [Serializable]
+    public class TargetInfo
+    {
+        public string category;
+        public string semantics;
+        public string description;
+        public List<POIResult> poi_results;
+    }
 
-    //[Serializable]
-    //public class POIResult
-    //{
-    //    public int id;
-    //    public string name;
-    //}
+    [Serializable]
+    public class POIResult
+    {
+        public int id;
+        public string name;
+    }
 
-    //[Serializable]
-    //public class VerificationRequest
-    //{
-    //    public string type;
-    //    public string original_type;
-    //    public string query;
-    //    public List<VerificationTarget> targets;
-    //}
+    [Serializable]
+    public class VerificationRequest
+    {
+        public string type;
+        public string original_type;
+        public string query;
+        public List<VerificationTarget> targets;
+    }
 
-    //[Serializable]
-    //public class VerificationTarget
-    //{
-    //    public string semantics;
-    //    public List<VerificationPoi> poi_results;
-    //}
+    [Serializable]
+    public class VerificationTarget
+    {
+        public string semantics;
+        public List<VerificationPoi> poi_results;
+    }
 
-    //[Serializable]
-    //public class VerificationPoi
-    //{
-    //    public int id;
-    //    public string name;
-    //    public float distance;
-    //}
+    [Serializable]
+    public class VerificationPoi
+    {
+        public int id;
+        public string name;
+        public float distance;
+    }
 
     [Serializable]
     [JsonConverter(typeof(ActionConverter))]
@@ -335,7 +335,7 @@ public class RealtimeQueryManager : MonoBehaviour
         isQuerying = false;
         try
         {
-            AgentResponse response = JsonConvert.DeserializeObject<AgentResponse>(json);
+            TriageResponse response = JsonConvert.DeserializeObject<TriageResponse>(json);
             
             if (!string.IsNullOrEmpty(response.response))
             {

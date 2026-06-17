@@ -17812,9 +17812,7 @@ MonoBehaviour:
   _data: {fileID: 0}
   _selector: {fileID: 177107632}
   _rigidbody: {fileID: 511996033}
-  _grabCenter: {fileID: 511996036}
   _grabTarget: {fileID: 0}
-  _velocityCalculator: {fileID: 0}
 --- !u!114 &371883568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24832,7 +24830,6 @@ Transform:
   - {fileID: 1524886771}
   - {fileID: 1074501834}
   - {fileID: 2021026515}
-  - {fileID: 698254144}
   - {fileID: 1703097214}
   - {fileID: 769510401}
   m_Father: {fileID: 0}
@@ -33775,80 +33772,6 @@ MonoBehaviour:
   _fadeOut: 0
   _gradientLength: 0.85
   _glowType: 28
---- !u!1001 &698254143
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 457201101}
-    m_Modifications:
-    - target: {fileID: 1599691682254674551, guid: d2a919b0895b74d159521cefa3e9bece, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2356883016276470546, guid: d2a919b0895b74d159521cefa3e9bece, type: 3}
-      propertyPath: m_Name
-      value: MSET_DG9A54Q60ZC4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4999458381546196461, guid: d2a919b0895b74d159521cefa3e9bece, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4999458381546196461, guid: d2a919b0895b74d159521cefa3e9bece, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4999458381546196461, guid: d2a919b0895b74d159521cefa3e9bece, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4999458381546196461, guid: d2a919b0895b74d159521cefa3e9bece, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4999458381546196461, guid: d2a919b0895b74d159521cefa3e9bece, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4999458381546196461, guid: d2a919b0895b74d159521cefa3e9bece, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4999458381546196461, guid: d2a919b0895b74d159521cefa3e9bece, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4999458381546196461, guid: d2a919b0895b74d159521cefa3e9bece, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4999458381546196461, guid: d2a919b0895b74d159521cefa3e9bece, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4999458381546196461, guid: d2a919b0895b74d159521cefa3e9bece, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7618859008653477555, guid: d2a919b0895b74d159521cefa3e9bece, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 4750035485358172054, guid: d2a919b0895b74d159521cefa3e9bece, type: 3}
-    - {fileID: -3867001901159855141, guid: d2a919b0895b74d159521cefa3e9bece, type: 3}
-    - {fileID: 5838150390597106728, guid: d2a919b0895b74d159521cefa3e9bece, type: 3}
-    - {fileID: 7531851429141079879, guid: d2a919b0895b74d159521cefa3e9bece, type: 3}
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d2a919b0895b74d159521cefa3e9bece, type: 3}
---- !u!4 &698254144 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4999458381546196461, guid: d2a919b0895b74d159521cefa3e9bece, type: 3}
-  m_PrefabInstance: {fileID: 698254143}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &698746260 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8098377307223922034, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
@@ -34466,7 +34389,6 @@ MonoBehaviour:
   _gripCollider: {fileID: 13449415}
   _pinchPoint: {fileID: 793118126}
   _pinchCollider: {fileID: 339329689}
-  _velocityCalculator: {fileID: 0}
 --- !u!114 &725614720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43252,6 +43174,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -47678,6 +47601,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -50120,6 +50044,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -87955,9 +87880,7 @@ MonoBehaviour:
   _data: {fileID: 0}
   _selector: {fileID: 725368691}
   _rigidbody: {fileID: 1578548157}
-  _grabCenter: {fileID: 1578548160}
   _grabTarget: {fileID: 0}
-  _velocityCalculator: {fileID: 0}
 --- !u!114 &1933646878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92862,7 +92785,6 @@ MonoBehaviour:
   _gripCollider: {fileID: 1509458431}
   _pinchPoint: {fileID: 147514848}
   _pinchCollider: {fileID: 1954408482}
-  _velocityCalculator: {fileID: 0}
 --- !u!114 &1950733360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103008,6 +102930,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -103552,6 +103475,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -105240,6 +105164,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -105555,6 +105480,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -108017,6 +107943,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -108153,6 +108080,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -108973,6 +108901,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _monoscopic: 0
   _sharpenType: 0
+  _disableRecording: 0
   _enableDynamicResolution: 0
   minDynamicResolutionScale: 1
   maxDynamicResolutionScale: 1
@@ -108984,8 +108913,13 @@ MonoBehaviour:
   maxRenderScale: 1
   _headPoseRelativeOffsetRotation: {x: 0, y: 0, z: 0}
   _headPoseRelativeOffsetTranslation: {x: 0, y: 0, z: 0}
-  profilerTcpPort: 32419
-  expandMixedRealityCapturePropertySheet: 0
+  enableCoreMetricsRelease: 0
+  enableCoreMetricsDevelopment: 1
+  coreMetricVisibility:
+    visibleMemoryMetricStats: 0
+    visibleMemoryMetricGraphs: 0
+    visibleRenderMetricStats: 0
+    visibleRenderMetricGraphs: 0
   enableMixedReality: 0
   compositionMethod: 0
   extraHiddenLayers:
@@ -109025,6 +108959,7 @@ MonoBehaviour:
   requestEyeTrackingPermissionOnStartup: 0
   requestScenePermissionOnStartup: 0
   requestRecordAudioPermissionOnStartup: 0
+  requestPassthroughCameraAccessPermissionOnStartup: 0
   _localDimming: 1
   _trackingOriginType: 1
   usePositionTracking: 1
@@ -109038,6 +108973,8 @@ MonoBehaviour:
   SimultaneousHandsAndControllersEnabled: 0
   _readOnlyWideMotionModeHandPosesEnabled: 0
   wideMotionModeHandPosesEnabled: 0
+  _readOnlyFastMotionModeHandPosesEnabled: 0
+  fastMotionModeHandPosesEnabled: 0
   dynamicResolutionVersion: 1
 --- !u!114 &7079690332563745817
 MonoBehaviour:
@@ -109861,6 +109798,7 @@ MonoBehaviour:
   m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -110853,6 +110791,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -111616,6 +111555,18 @@ MonoBehaviour:
   _whenUnselectedEmpty:
     m_PersistentCalls:
       m_Calls: []
+  _whenBeginHighlightWithObject:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenEndHighlightWithObject:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectedHoveredWithObject:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenUnselectedHoveredWithObject:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8601944128682662882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112146,6 +112097,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0

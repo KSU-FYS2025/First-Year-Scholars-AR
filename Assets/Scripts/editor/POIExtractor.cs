@@ -40,7 +40,7 @@ namespace MultiSet.Samples.Editor
             collection.exportTimestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
             // Find all objects of type POI in the scene
-            MonoBehaviour[] allScripts = FindObjectsOfType<MonoBehaviour>();
+            MonoBehaviour[] allScripts = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.InstanceID);
             foreach (var script in allScripts)
             {
                 if (script.GetType().Name == "POI")
