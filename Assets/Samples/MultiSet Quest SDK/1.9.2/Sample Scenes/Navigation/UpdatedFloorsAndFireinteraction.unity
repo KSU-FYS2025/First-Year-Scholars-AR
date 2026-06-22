@@ -20353,7 +20353,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8098377307223922036, guid: b847b09ad8ad3402eae3aa183a511d93, type: 3}
       propertyPath: description
-      value: MAC Computer classroom(2120/J-264) is a classroom with only Apply computers,
+      value: MAC Computer classroom(2120/J-264) is a classroom with only Apple computers,
         used for lectures that use computers. It has the capacity for 40 students,
         it has 40 seats. Approximately 1030 sq ft.
       objectReference: {fileID: 0}
@@ -42139,6 +42139,7 @@ MonoBehaviour:
   pathHeightAboveGround: 0.1
   cornerVisualizationPrefab: {fileID: 2874670000088497872, guid: a76558bfbbdf846e88427df69facd471, type: 3}
   isCornersVisible: 0
+  invalidPathTimeout: 10
 --- !u!114 &798593630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73269,13 +73270,13 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4125561443100300578, guid: 1857ce5e5e71e4f12b2c444fda4771c9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 4125561443100300578, guid: 1857ce5e5e71e4f12b2c444fda4771c9, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1524886775}
     - targetCorrespondingSourceObject: {fileID: 4125561443100300578, guid: 1857ce5e5e71e4f12b2c444fda4771c9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1524886774}
+    - targetCorrespondingSourceObject: {fileID: 4125561443100300578, guid: 1857ce5e5e71e4f12b2c444fda4771c9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 1857ce5e5e71e4f12b2c444fda4771c9, type: 3}
 --- !u!4 &1524886771 stripped
 Transform:
