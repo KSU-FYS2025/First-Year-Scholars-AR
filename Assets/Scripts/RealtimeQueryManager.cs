@@ -32,6 +32,8 @@ public class RealtimeQueryManager : MonoBehaviour
     // Track spawned line visualization objects
     private List<GameObject> activePathVisualizations = new List<GameObject>();
 
+    private ActionsAgentOutput actions = null;
+
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI backendText;
 
@@ -166,10 +168,10 @@ public class RealtimeQueryManager : MonoBehaviour
     }
 
     [Serializable]
-    class AgentResponse
+    class ActionsAgentOutput
     {
-        public string response;
         public Action[] actions;
+        public string userQuery;
     }
 
     public class ActionConverter : JsonConverter
@@ -249,7 +251,7 @@ public class RealtimeQueryManager : MonoBehaviour
 
         ws.OnMessage += (sender, e) => {
             // Queue the message to be processed on Unity's main thread
-            responseQueue.Enqueue(e.Data);
+            
         };
 
         ws.OnError += (sender, e) => {
