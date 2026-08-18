@@ -33,6 +33,7 @@ public class RealtimeQueryManager : MonoBehaviour
     private List<GameObject> activePathVisualizations = new List<GameObject>();
 
     private ActionsAgentOutput actions = null;
+    private Action currentAction = null;
 
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI backendText;
@@ -42,6 +43,19 @@ public class RealtimeQueryManager : MonoBehaviour
     {
         public string query;
         public UserContext context;
+    }
+
+    [Serializable]
+    public class ClarifyRequest
+    {
+        public string user_input;
+        public ClarifyAction clarification_action;
+    }
+
+    [Serializable]
+    public class NewQueryRequest
+    {
+        public string message;
     }
 
     [Serializable]
@@ -114,7 +128,7 @@ public class RealtimeQueryManager : MonoBehaviour
 
     [Serializable]
     [JsonConverter(typeof(ActionConverter))]
-    class Action
+    public class Action
     {
         public int order;
         [JsonProperty("cmd")]
@@ -150,14 +164,14 @@ public class RealtimeQueryManager : MonoBehaviour
     }
 
     [Serializable]
-    class ClarificationSuggestion
+    public class ClarificationSuggestion
     {
         public int id;
         public string name;
     }
 
     [Serializable]
-    class ClarifyAction : Action
+    public class ClarifyAction : Action
     {
         [JsonProperty("cmd")]
         public override string Cmd => "clarify";
@@ -321,11 +335,43 @@ public class RealtimeQueryManager : MonoBehaviour
 
         lastQuery = userQuery;
 
-        QueryRequest request = new QueryRequest 
-        { 
-            query = userQuery,
-            context = context
-        };
+        //QueryRequest request = new QueryRequest 
+        //{ 
+        //    query = userQuery,
+        //    context = context
+        //};
+
+        System.Object request = null;
+        if (actions == null)
+        {
+            request = new NewQueryRequest
+            {
+                message = userQuery
+            };
+
+            // If user request contains cancel in any way, cancel any processing actions.
+            if ((request as NewQueryRequest).message.ToLower().Contains("cancel"))
+            {
+                actions = null;
+                Debug.Log("[RealtimeQueryManager] Cancelling all actions!");
+                return;
+            }
+        }
+        else
+        {
+            if (currentAction is not ClarifyAction)
+            {
+                Debug.Log($"[RealtimeQueryManager] Clarification code called on non-clarification action: {currentAction}");
+            }
+            else
+            {
+                request = new ClarifyRequest
+                {
+                    user_input = userQuery,
+                    clarification_action = currentAction as ClarifyAction
+                };
+            }
+        }
 
         string payload = JsonUtility.ToJson(request);
         ws.Send(payload);
