@@ -128,7 +128,7 @@ public class RealtimeQueryManager : MonoBehaviour
 
     [Serializable]
     [JsonConverter(typeof(ActionConverter))]
-    public class Action
+    public abstract class Action
     {
         public int order;
         [JsonProperty("cmd")]
