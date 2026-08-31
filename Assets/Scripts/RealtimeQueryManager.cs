@@ -32,6 +32,8 @@ public class RealtimeQueryManager : MonoBehaviour
     // Track spawned line visualization objects
     private List<GameObject> activePathVisualizations = new List<GameObject>();
 
+    private ConcurrentQueue<Action> actionsQueue = new ConcurrentQueue<Action>();
+
     private ActionsAgentOutput actions = null;
     private Action currentAction = null;
 
@@ -143,6 +145,11 @@ public class RealtimeQueryManager : MonoBehaviour
 
         public int id;
         public string target_label;
+    }
+
+    class UnityNavigationAction : NavigationAction
+    {
+        public NavMeshPath path;
     }
 
     [Serializable]
@@ -383,70 +390,90 @@ public class RealtimeQueryManager : MonoBehaviour
         isQuerying = false;
         try
         {
-            TriageResponse response = JsonConvert.DeserializeObject<TriageResponse>(json);
-            
-            if (!string.IsNullOrEmpty(response.response))
+            if (actionsQueue.IsEmpty)
             {
-                Debug.Log("[RealtimeQueryManager] AI: " + response.response);
-            }
+                ActionsAgentOutput response = JsonConvert.DeserializeObject<ActionsAgentOutput>(json);
 
-            // Step 1: Handle Initial Request (Both Navigation and Inquiry now get verified!)
-            if ((response.type == "navigation" || response.type == "inquiry") && response.targets != null && response.targets.Count > 0)
-            {
-                VerificationRequest vRequest = CalculateNavMeshDistances(response.targets);
-                vRequest.query = lastQuery;
-                vRequest.original_type = response.type; // Tell Python STAGE 5 what intent we are fulfilling
-                
-                string vPayload = JsonUtility.ToJson(vRequest);
-                
-                Debug.Log($"[RealtimeQueryManager] Sending 2-Way Verification Payload: {vPayload}");
-                ws.Send(vPayload);
-                return; // Stop execution until Verification responds
-            }
-
-            // Step 2: Receive the final verified AI actions
-            if (response.actions != null && response.actions.Count > 0)
-            {
-                Vector3 currentStartPos = trackingTarget != null ? trackingTarget.position 
-                                        : (Camera.main != null ? Camera.main.transform.position 
-                                        : transform.position);
-
-                foreach (var action in response.actions)
+                if (response == null)
                 {
-                    // For the final step, we just execute the action the AI gave us
-                    // We can resolve the MonoBehaviour if we want, but ID is enough for execution
-                    MonoBehaviour bestPOI = action.id > 0 && poiCache.ContainsKey(action.id) ? poiCache[action.id] : null;
+                    Debug.Log("[RealtimeQueryManager] AI: Response from backend is null!" + response.ToString());
+                    return;
+                }
 
-                    if (bestPOI != null && (action.cmd == "navigation" || action.cmd == "inquiry"))
-                    {
-                        Vector3 validStart = currentStartPos;
-                        Vector3 validEnd = bestPOI.transform.position;
-                        NavMeshHit hit;
-                        if (NavMesh.SamplePosition(currentStartPos, out hit, 2.5f, NavMesh.AllAreas)) validStart = hit.position;
-                        if (NavMesh.SamplePosition(bestPOI.transform.position, out hit, 2.5f, NavMesh.AllAreas)) validEnd = hit.position;
-
-                        NavMeshPath path = new NavMeshPath();
-                        // Allow PathPartial so it doesn't fail silently over slight navigation gaps
-                        if (NavMesh.CalculatePath(validStart, validEnd, NavMesh.AllAreas, path) && path.status != NavMeshPathStatus.PathInvalid)
-                        {
-                            DrawPathInGame(path, Color.magenta, 60f, validEnd);
-                            
-                            // Set the next path to start from this destination!
-                            currentStartPos = validEnd;
-
-                            backendText.text = "Destination found!";
-                        }
-                        else
-                        {
-                            Debug.LogWarning($"[RealtimeQueryManager] Could not calculate valid NavMesh route for {bestPOI.gameObject.name}. Drawing straight-line fallback.");
-                            DrawStraightLineInGame(validStart, validEnd, new Color(1f, 0.5f, 0f), 60f); // Bright Orange
-                            currentStartPos = validEnd; // Still advance point in case next path succeeds
-                        }
-                    }
-
-                    ExecuteAction(action, bestPOI);
+                foreach (Action action in response.actions)
+                {
+                    actionsQueue.Enqueue(action);
                 }
             }
+            //TriageResponse response = JsonConvert.DeserializeObject<TriageResponse>(json);
+
+            else
+            {
+
+            }
+            
+            //if (!string.IsNullOrEmpty(response.response))
+            //{
+            //    Debug.Log("[RealtimeQueryManager] AI: " + response.response);
+            //}
+
+            //// Step 1: Handle Initial Request (Both Navigation and Inquiry now get verified!)
+            //if ((response.type == "navigation" || response.type == "inquiry") && response.targets != null && response.targets.Count > 0)
+            //{
+            //    VerificationRequest vRequest = CalculateNavMeshDistances(response.targets);
+            //    vRequest.query = lastQuery;
+            //    vRequest.original_type = response.type; // Tell Python STAGE 5 what intent we are fulfilling
+                
+            //    string vPayload = JsonUtility.ToJson(vRequest);
+                
+            //    Debug.Log($"[RealtimeQueryManager] Sending 2-Way Verification Payload: {vPayload}");
+            //    ws.Send(vPayload);
+            //    return; // Stop execution until Verification responds
+            //}
+
+            //// Step 2: Receive the final verified AI actions
+            //if (response.actions != null && response.actions.Count > 0)
+            //{
+            //    Vector3 currentStartPos = trackingTarget != null ? trackingTarget.position 
+            //                            : (Camera.main != null ? Camera.main.transform.position 
+            //                            : transform.position);
+
+            //    foreach (var action in response.actions)
+            //    {
+            //        // For the final step, we just execute the action the AI gave us
+            //        // We can resolve the MonoBehaviour if we want, but ID is enough for execution
+            //        MonoBehaviour bestPOI = action.id > 0 && poiCache.ContainsKey(action.id) ? poiCache[action.id] : null;
+
+            //        if (bestPOI != null && (action.cmd == "navigation" || action.cmd == "inquiry"))
+            //        {
+            //            Vector3 validStart = currentStartPos;
+            //            Vector3 validEnd = bestPOI.transform.position;
+            //            NavMeshHit hit;
+            //            if (NavMesh.SamplePosition(currentStartPos, out hit, 2.5f, NavMesh.AllAreas)) validStart = hit.position;
+            //            if (NavMesh.SamplePosition(bestPOI.transform.position, out hit, 2.5f, NavMesh.AllAreas)) validEnd = hit.position;
+
+            //            NavMeshPath path = new NavMeshPath();
+            //            // Allow PathPartial so it doesn't fail silently over slight navigation gaps
+            //            if (NavMesh.CalculatePath(validStart, validEnd, NavMesh.AllAreas, path) && path.status != NavMeshPathStatus.PathInvalid)
+            //            {
+            //                DrawPathInGame(path, Color.magenta, 60f, validEnd);
+                            
+            //                // Set the next path to start from this destination!
+            //                currentStartPos = validEnd;
+
+            //                backendText.text = "Destination found!";
+            //            }
+            //            else
+            //            {
+            //                Debug.LogWarning($"[RealtimeQueryManager] Could not calculate valid NavMesh route for {bestPOI.gameObject.name}. Drawing straight-line fallback.");
+            //                DrawStraightLineInGame(validStart, validEnd, new Color(1f, 0.5f, 0f), 60f); // Bright Orange
+            //                currentStartPos = validEnd; // Still advance point in case next path succeeds
+            //            }
+            //        }
+
+            //        ExecuteAction(action, bestPOI);
+            //    }
+            //}
         }
         catch (Exception ex)
         {
@@ -455,88 +482,155 @@ public class RealtimeQueryManager : MonoBehaviour
         }
     }
 
-    private VerificationRequest CalculateNavMeshDistances(List<TargetInfo> targets)
+    private void ProcessActions()
     {
-        VerificationRequest req = new VerificationRequest();
-        req.type = "verification";
-        req.targets = new List<VerificationTarget>();
+        ConcurrentQueue<Action> actions = new();
 
-        Vector3 currentStartPos = trackingTarget != null ? trackingTarget.position 
-                        : (Camera.main != null ? Camera.main.transform.position 
+        while (actionsQueue.TryDequeue(out Action action))
+        {
+            Action result = action switch
+            {
+                NavigationAction a => ProcessNavigationAction(a),
+                ResolveNearestAction a => null,
+                AnswerAction a => null,
+                ClarifyAction a => null,
+                _ => throw new Exception("Invalid action!!!!"),
+            };
+            if (result != null)
+                actions.Enqueue(action);
+        }
+        while (actions.TryDequeue(out Action action))
+            actionsQueue.Enqueue(action);
+    }
+
+    private UnityNavigationAction ConvertToUnityNavigationAction(NavigationAction action)
+    {
+        Vector3 currentStartPos = trackingTarget != null ? trackingTarget.position
+                        : (Camera.main != null ? Camera.main.transform.position
                         : transform.position);
 
-        foreach (var target in targets)
+        if (action is NavigationAction navigationAction)
         {
-            if (target.poi_results == null || target.poi_results.Count == 0) continue;
+            if (!poiCache.TryGetValue(action.id, out MonoBehaviour poi))
+                throw new Exception("[RealtimeQueryManager]: Invalid id when processing navigation action! " + action.id+"   Skipping!");
 
-            VerificationTarget vTarget = new VerificationTarget();
-            vTarget.semantics = target.semantics;
-            vTarget.poi_results = new List<VerificationPoi>();
+            Vector3 poiLocation = poi.transform.position;
+            NavMeshHit hit;
 
-            MonoBehaviour closestPOI = null;
-            float minDistance = float.MaxValue;
-            NavMeshPath bestPath = null;
+            Vector3? start = null, end = null;
 
-            foreach (var poiResult in target.poi_results)
+            if (NavMesh.SamplePosition(currentStartPos, out hit, 2.5f, NavMesh.AllAreas)) start = hit.position;
+            if (NavMesh.SamplePosition(poiLocation, out hit, 2.5f, NavMesh.AllAreas)) end = hit.position;
+
+            if (start == null ||  end == null)
             {
-                if (poiCache.TryGetValue(poiResult.id, out MonoBehaviour poiScript))
-                {
-                    Vector3 destination = poiScript.transform.position;
-                    float pathLength = float.MaxValue;
-
-                    // Ensure both starting and ending points are physically on the NavMesh
-                    Vector3 validStart = currentStartPos;
-                    Vector3 validEnd = destination;
-                    NavMeshHit hit;
-                    
-                    if (NavMesh.SamplePosition(currentStartPos, out hit, 2.5f, NavMesh.AllAreas)) validStart = hit.position;
-                    if (NavMesh.SamplePosition(destination, out hit, 2.5f, NavMesh.AllAreas)) validEnd = hit.position;
-
-                    // Support PathComplete AND PathPartial so stairs/door links don't randomly fail
-                    NavMeshPath path = new NavMeshPath();
-                    if (NavMesh.CalculatePath(validStart, validEnd, NavMesh.AllAreas, path) 
-                        && path.status != NavMeshPathStatus.PathInvalid)
-                    {
-                        pathLength = GetPathLength(path, validEnd);
-                    }
-                    else
-                    {
-                        // Fallback only if no physical nav path exists
-                        pathLength = Vector3.Distance(validStart, validEnd);
-                        Debug.LogWarning($"[RealtimeQueryManager] NavMesh path to ID {poiResult.id} not found entirely, utilizing physical straight-line distance.");
-                    }
-                    
-                    // Add physical distance to verification payload for AI
-                    vTarget.poi_results.Add(new VerificationPoi {
-                        id = poiResult.id,
-                        name = poiResult.name,
-                        distance = pathLength
-                    });
-
-                    if (pathLength < minDistance)
-                    {
-                        minDistance = pathLength;
-                        closestPOI = poiScript;
-                        bestPath = path;
-                    }
-                }
-                else
-                {
-                    Debug.LogWarning($"[RealtimeQueryManager] Target ID {poiResult.id} not found in scene cache.");
-                }
+                throw new Exception("[RealtimeQueryManager]: No valid start or end for path: " + action);
             }
-            
-            // Re-anchor the next distance check to start from the winning POI!
-            if (closestPOI != null)
+
+            Vector3 validStart = start.Value;
+            Vector3 validEnd = end.Value;
+
+            NavMeshPath path = new NavMeshPath();
+
+            if (!NavMesh.CalculatePath(validStart, validEnd, NavMesh.AllAreas, path)
+                && path.status == NavMeshPathStatus.PathInvalid)
             {
-                currentStartPos = closestPOI.transform.position;
+                throw new Exception("[RealtimeQueryManager]: Invalid path for action " + action);
             }
-            
-            req.targets.Add(vTarget);
 
+            return new UnityNavigationAction()
+            {
+                id = action.id,
+                order = action.order,
+                path = path,
+                target_label = action.target_label,
+            };
         }
+        return action as UnityNavigationAction;
+    }
 
-        return req;
+    private void CalculateNavMeshDistances(List<TargetInfo> targets)
+    {
+        //VerificationRequest req = new VerificationRequest();
+        //req.type = "verification";
+        //req.targets = new List<VerificationTarget>();
+
+        //Vector3 currentStartPos = trackingTarget != null ? trackingTarget.position 
+        //                : (Camera.main != null ? Camera.main.transform.position 
+        //                : transform.position);
+
+        //foreach (var target in targets)
+        //{
+        //    if (target.poi_results == null || target.poi_results.Count == 0) continue;
+
+        //    VerificationTarget vTarget = new VerificationTarget();
+        //    vTarget.semantics = target.semantics;
+        //    vTarget.poi_results = new List<VerificationPoi>();
+
+        //    MonoBehaviour closestPOI = null;
+        //    float minDistance = float.MaxValue;
+        //    NavMeshPath bestPath = null;
+
+        //    foreach (var poiResult in target.poi_results)
+        //    {
+        //        if (poiCache.TryGetValue(poiResult.id, out MonoBehaviour poiScript))
+        //        {
+        //            Vector3 destination = poiScript.transform.position;
+        //            float pathLength = float.MaxValue;
+
+        //            // Ensure both starting and ending points are physically on the NavMesh
+        //            Vector3 validStart = currentStartPos;
+        //            Vector3 validEnd = destination;
+        //            NavMeshHit hit;
+                    
+        //            if (NavMesh.SamplePosition(currentStartPos, out hit, 2.5f, NavMesh.AllAreas)) validStart = hit.position;
+        //            if (NavMesh.SamplePosition(destination, out hit, 2.5f, NavMesh.AllAreas)) validEnd = hit.position;
+
+        //            // Support PathComplete AND PathPartial so stairs/door links don't randomly fail
+        //            NavMeshPath path = new NavMeshPath();
+        //            if (NavMesh.CalculatePath(validStart, validEnd, NavMesh.AllAreas, path) 
+        //                && path.status != NavMeshPathStatus.PathInvalid)
+        //            {
+        //                pathLength = GetPathLength(path, validEnd);
+        //            }
+        //            else
+        //            {
+        //                // Fallback only if no physical nav path exists
+        //                pathLength = Vector3.Distance(validStart, validEnd);
+        //                Debug.LogWarning($"[RealtimeQueryManager] NavMesh path to ID {poiResult.id} not found entirely, utilizing physical straight-line distance.");
+        //            }
+                    
+        //            // Add physical distance to verification payload for AI
+        //            vTarget.poi_results.Add(new VerificationPoi {
+        //                id = poiResult.id,
+        //                name = poiResult.name,
+        //                distance = pathLength
+        //            });
+
+        //            if (pathLength < minDistance)
+        //            {
+        //                minDistance = pathLength;
+        //                closestPOI = poiScript;
+        //                bestPath = path;
+        //            }
+        //        }
+        //        else
+        //        {
+        //            Debug.LogWarning($"[RealtimeQueryManager] Target ID {poiResult.id} not found in scene cache.");
+        //        }
+        //    }
+            
+        //    // Re-anchor the next distance check to start from the winning POI!
+        //    if (closestPOI != null)
+        //    {
+        //        currentStartPos = closestPOI.transform.position;
+        //    }
+            
+        //    req.targets.Add(vTarget);
+
+        //}
+
+        //return req;
     }
 
     private float GetPathLength(NavMeshPath path, Vector3 trueDestination)
