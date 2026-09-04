@@ -4,7 +4,9 @@ using System;
 using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 using WebSocketSharp;
@@ -138,7 +140,7 @@ public class RealtimeQueryManager : MonoBehaviour
     }
 
     [Serializable]
-    class NavigationAction : Action
+    public class NavigationAction : Action
     {
         [JsonProperty("cmd")]
         public override string Cmd => "navigation";
@@ -147,7 +149,7 @@ public class RealtimeQueryManager : MonoBehaviour
         public string target_label;
     }
 
-    class UnityNavigationAction : NavigationAction
+    public class UnityNavigationAction : NavigationAction
     {
         public NavMeshPath path;
     }
@@ -503,50 +505,130 @@ public class RealtimeQueryManager : MonoBehaviour
             actionsQueue.Enqueue(action);
     }
 
-    private UnityNavigationAction ConvertToUnityNavigationAction(NavigationAction action)
+    private Action ProcessNavigationAction(NavigationAction action)
     {
-        Vector3 currentStartPos = trackingTarget != null ? trackingTarget.position
+        if (!ConvertToUnityNavigationAction(action, out UnityNavigationAction navigationAction))
+            throw new Exception("[RealtimeQueryManager]: Encountered error when converting " + action.ToString() + " to UnityNavigationAction object!");
+
+        DrawPathInGame(navigationAction.path, Color.magenta, 60f, navigationAction.path.corners[^1]);
+        
+        return null;
+    }
+
+    private Action ProcessResolveNearestAction(ResolveNearestAction action)
+    {
+        List<MonoBehaviour> pois = new();
+        foreach (int id in action.candidate_ids)
+        {
+            // If poi is invalid, just don't add it
+            // Consider changing this later for explicit error statements
+            if (poiCache.TryGetValue(id, out MonoBehaviour poi))
+                pois.Add(poi);
+        }
+
+        
+        return null;
+    }
+
+
+
+    private bool ConvertToPath(int id, out NavMeshPath path, Vector3? startPosition = null)
+    {
+        if (startPosition is not Vector3 startPos)
+            startPos = trackingTarget != null ? trackingTarget.position
                         : (Camera.main != null ? Camera.main.transform.position
                         : transform.position);
+        if (!poiCache.TryGetValue(id, out MonoBehaviour poi))
+            throw new Exception("[RealtimeQueryManager]: Invalid id when processing navigation action! " + id + "   Skipping!");
 
-        if (action is NavigationAction navigationAction)
+        Vector3 poiLocation = poi.transform.position;
+        NavMeshHit hit;
+
+        Vector3? start = null, end = null;
+
+        if (NavMesh.SamplePosition(startPos, out hit, 2.5f, NavMesh.AllAreas)) start = hit.position;
+        if (NavMesh.SamplePosition(poiLocation, out hit, 2.5f, NavMesh.AllAreas)) end = hit.position;
+
+        if (start == null || end == null)
         {
-            if (!poiCache.TryGetValue(action.id, out MonoBehaviour poi))
-                throw new Exception("[RealtimeQueryManager]: Invalid id when processing navigation action! " + action.id+"   Skipping!");
-
-            Vector3 poiLocation = poi.transform.position;
-            NavMeshHit hit;
-
-            Vector3? start = null, end = null;
-
-            if (NavMesh.SamplePosition(currentStartPos, out hit, 2.5f, NavMesh.AllAreas)) start = hit.position;
-            if (NavMesh.SamplePosition(poiLocation, out hit, 2.5f, NavMesh.AllAreas)) end = hit.position;
-
-            if (start == null ||  end == null)
-            {
-                throw new Exception("[RealtimeQueryManager]: No valid start or end for path: " + action);
-            }
-
-            Vector3 validStart = start.Value;
-            Vector3 validEnd = end.Value;
-
-            NavMeshPath path = new NavMeshPath();
-
-            if (!NavMesh.CalculatePath(validStart, validEnd, NavMesh.AllAreas, path)
-                && path.status == NavMeshPathStatus.PathInvalid)
-            {
-                throw new Exception("[RealtimeQueryManager]: Invalid path for action " + action);
-            }
-
-            return new UnityNavigationAction()
-            {
-                id = action.id,
-                order = action.order,
-                path = path,
-                target_label = action.target_label,
-            };
+            throw new Exception("[RealtimeQueryManager]: No valid start or end for path: " + id);
         }
-        return action as UnityNavigationAction;
+
+        Vector3 validStart = start.Value;
+        Vector3 validEnd = end.Value;
+
+        path = new NavMeshPath();
+
+        if (!NavMesh.CalculatePath(validStart, validEnd, NavMesh.AllAreas, path)
+            && path.status == NavMeshPathStatus.PathInvalid)
+        {
+            throw new Exception("[RealtimeQueryManager]: Invalid path for action " + id);
+        }
+
+        return true;
+    }
+
+    private bool ConvertToUnityNavigationAction(NavigationAction action, out UnityNavigationAction navAction, Vector3? startPos)
+    {
+        if (action is not UnityNavigationAction navigationAction)
+        {
+            if (ConvertToPath(action.id, out NavMeshPath path, startPos))
+            {
+                navAction = new UnityNavigationAction()
+                {
+                    id = action.id,
+                    order = action.order,
+                    path = path,
+                    target_label = action.target_label,
+                };
+                return true;
+            }
+
+            navAction = null;
+            return false;
+        }
+
+        navAction = action as UnityNavigationAction;
+        return true;
+    }
+
+    private void DrawPathInGame(NavMeshPath path, Color color, float durationSecs, Vector3 trueDestination)
+    {
+        // Create an empty GameObject to hold the line renderer
+        GameObject lineObj = new GameObject("AI_Path_Visualization");
+        LineRenderer line = lineObj.AddComponent<LineRenderer>();
+
+        bool addGapDrop = path.status == NavMeshPathStatus.PathPartial && path.corners.Length > 0;
+        int count = path.corners.Length + (addGapDrop ? 1 : 0);
+
+        line.positionCount = count;
+        Vector3[] offsetCorners = new Vector3[count];
+
+        for (int i = 0; i < path.corners.Length; i++)
+        {
+            // Raises the line slightly so it's clearly visible above the floor
+            offsetCorners[i] = path.corners[i] + Vector3.up * 0.5f;
+        }
+
+        if (addGapDrop)
+        {
+            // Appends a visible line connecting the dead-end NavMesh boundary directly to the destination
+            offsetCorners[count - 1] = trueDestination + Vector3.up * 0.5f;
+        }
+
+        line.SetPositions(offsetCorners);
+
+        // Setup LineRenderer properties to make it highly visible
+        line.startWidth = 0.2f;
+        line.endWidth = 0.2f;
+        line.material = new Material(Shader.Find("Sprites/Default")); // Basic unlit shader
+        line.startColor = color;
+        line.endColor = color;
+
+        activePathVisualizations.Add(lineObj);
+
+        // Auto-cleanup the visualization line after duration
+        Destroy(lineObj, durationSecs);
     }
 
     private void CalculateNavMeshDistances(List<TargetInfo> targets)
@@ -648,45 +730,6 @@ public class RealtimeQueryManager : MonoBehaviour
             length += Vector3.Distance(corners[corners.Length - 1], trueDestination);
         }
         return length;
-    }
-
-    private void DrawPathInGame(NavMeshPath path, Color color, float durationSecs, Vector3 trueDestination)
-    {
-        // Create an empty GameObject to hold the line renderer
-        GameObject lineObj = new GameObject("AI_Path_Visualization");
-        LineRenderer line = lineObj.AddComponent<LineRenderer>();
-        
-        bool addGapDrop = path.status == NavMeshPathStatus.PathPartial && path.corners.Length > 0;
-        int count = path.corners.Length + (addGapDrop ? 1 : 0);
-        
-        line.positionCount = count;
-        Vector3[] offsetCorners = new Vector3[count];
-        
-        for (int i = 0; i < path.corners.Length; i++)
-        {
-            // Raises the line slightly so it's clearly visible above the floor
-            offsetCorners[i] = path.corners[i] + Vector3.up * 0.5f;
-        }
-
-        if (addGapDrop)
-        {
-            // Appends a visible line connecting the dead-end NavMesh boundary directly to the destination
-            offsetCorners[count - 1] = trueDestination + Vector3.up * 0.5f;
-        }
-        
-        line.SetPositions(offsetCorners);
-        
-        // Setup LineRenderer properties to make it highly visible
-        line.startWidth = 0.2f;
-        line.endWidth = 0.2f;
-        line.material = new Material(Shader.Find("Sprites/Default")); // Basic unlit shader
-        line.startColor = color;
-        line.endColor = color;
-        
-        activePathVisualizations.Add(lineObj);
-        
-        // Auto-cleanup the visualization line after duration
-        Destroy(lineObj, durationSecs);
     }
 
     private void DrawStraightLineInGame(Vector3 start, Vector3 end, Color color, float durationSecs)
