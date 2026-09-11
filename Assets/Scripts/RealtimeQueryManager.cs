@@ -190,6 +190,10 @@ public class RealtimeQueryManager : MonoBehaviour
         public string prompt;
     }
 
+    // Placeholder action to enforce design standards while ensuring that some actions properly resolve.
+    // Does not need to be serializable since this is only to be used internally, not between systems.
+    public class WaitUntilResolvedAction : Action {}
+
     [Serializable]
     class ActionsAgentOutput
     {
@@ -484,20 +488,26 @@ public class RealtimeQueryManager : MonoBehaviour
         }
     }
 
+    // Goes through one turn of processing actions from the backend.
     private void ProcessActions()
     {
         ConcurrentQueue<Action> actions = new();
+        Vector3? lastPosition = null;
+        Action result = null;
 
         while (actionsQueue.TryDequeue(out Action action))
         {
-            Action result = action switch
+            if (result is not WaitUntilResolvedAction)
             {
-                NavigationAction a => ProcessNavigationAction(a),
-                ResolveNearestAction a => null,
-                AnswerAction a => null,
-                ClarifyAction a => null,
-                _ => throw new Exception("Invalid action!!!!"),
-            };
+                result = action switch
+                {
+                    NavigationAction a => ProcessNavigationAction(a),
+                    ResolveNearestAction a => null,
+                    AnswerAction a => null,
+                    ClarifyAction a => null,
+                    _ => throw new Exception("Invalid action!!!!"),
+                };
+            }
             if (result != null)
                 actions.Enqueue(action);
         }
@@ -510,24 +520,40 @@ public class RealtimeQueryManager : MonoBehaviour
         if (!ConvertToUnityNavigationAction(action, out UnityNavigationAction navigationAction))
             throw new Exception("[RealtimeQueryManager]: Encountered error when converting " + action.ToString() + " to UnityNavigationAction object!");
 
-        DrawPathInGame(navigationAction.path, Color.magenta, 60f, navigationAction.path.corners[^1]);
+        if (poiCache.TryGetValue(action.id, out MonoBehaviour poi))
+            DrawPathInGame(navigationAction.path, Color.magenta, 60f, poi.transform.position);
         
-        return null;
+        return new WaitUntilResolvedAction
+        {
+            order = navigationAction.order
+        };
     }
 
-    private Action ProcessResolveNearestAction(ResolveNearestAction action)
+    private Action ProcessResolveNearestAction(ResolveNearestAction action, Vector3? lastPosition = null)
     {
-        List<MonoBehaviour> pois = new();
+        Dictionary<int, (float, NavMeshPath)> pathLengths = new();
         foreach (int id in action.candidate_ids)
         {
             // If poi is invalid, just don't add it
             // Consider changing this later for explicit error statements
-            if (poiCache.TryGetValue(id, out MonoBehaviour poi))
-                pois.Add(poi);
+            if (poiCache.TryGetValue(id, out MonoBehaviour poi) &&
+                ConvertToPath(id, out NavMeshPath path, lastPosition))
+                pathLengths.Add(id, (GetPathLength(path, poi.transform.position), path));
         }
 
+        KeyValuePair<int, (float, NavMeshPath)> selectedPair = pathLengths
+            .OrderByDescending(pair => pair.Value.Item1)
+            .First();
+
+        UnityNavigationAction resultAction = new UnityNavigationAction
+        {
+            order = action.order,
+            id = selectedPair.Key,
+            path = selectedPair.Value.Item2,
+            target_label = "Internal do not display"
+        };
         
-        return null;
+        return resultAction;
     }
 
 
@@ -568,7 +594,7 @@ public class RealtimeQueryManager : MonoBehaviour
         return true;
     }
 
-    private bool ConvertToUnityNavigationAction(NavigationAction action, out UnityNavigationAction navAction, Vector3? startPos)
+    private bool ConvertToUnityNavigationAction(NavigationAction action, out UnityNavigationAction navAction, Vector3? startPos = null)
     {
         if (action is not UnityNavigationAction navigationAction)
         {
