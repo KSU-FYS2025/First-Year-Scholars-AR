@@ -1,3 +1,6 @@
+using Meta.WitAi;
+using Meta.WitAi.TTS.Integrations;
+using Meta.WitAi.TTS.Utilities;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -6,6 +9,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Unity.Android.Gradle.Manifest;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
@@ -38,6 +42,7 @@ public class RealtimeQueryManager : MonoBehaviour
 
     private ActionsAgentOutput actions = null;
     private Action currentAction = null;
+    private TTSSpeaker witService = null;
 
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI backendText;
@@ -229,6 +234,15 @@ public class RealtimeQueryManager : MonoBehaviour
         }
 
         public override bool CanWrite => false;
+    }
+
+    private void OnEnable()
+    {
+        // Obtain disk cache if possible
+        if (witService == null)
+        {
+            witService = FindAnyObjectByType<TTSSpeaker>();
+        }
     }
 
     private void Start()
@@ -503,7 +517,7 @@ public class RealtimeQueryManager : MonoBehaviour
                 {
                     NavigationAction a => ProcessNavigationAction(a),
                     ResolveNearestAction a => null,
-                    AnswerAction a => null,
+                    AnswerAction a => ProcessAnswerAction(a),
                     ClarifyAction a => null,
                     _ => throw new Exception("Invalid action!!!!"),
                 };
@@ -556,7 +570,17 @@ public class RealtimeQueryManager : MonoBehaviour
         return resultAction;
     }
 
+    private Action ProcessAnswerAction(AnswerAction action)
+    {
+        witService.Speak(action.text);
+        return null;
+    }
 
+    private Action ProcessClarifyAction(ClarifyAction action)
+    {
+        witService.Speak(action.prompt);
+
+    }
 
     private bool ConvertToPath(int id, out NavMeshPath path, Vector3? startPosition = null)
     {
