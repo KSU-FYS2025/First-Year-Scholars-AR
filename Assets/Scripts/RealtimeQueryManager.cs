@@ -579,7 +579,7 @@ public class RealtimeQueryManager : MonoBehaviour
     private Action ProcessClarifyAction(ClarifyAction action)
     {
         witService.Speak(action.prompt);
-
+        return null;
     }
 
     private bool ConvertToPath(int id, out NavMeshPath path, Vector3? startPosition = null)
