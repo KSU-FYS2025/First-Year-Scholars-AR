@@ -6312,9 +6312,7 @@ MonoBehaviour:
   _data: {fileID: 0}
   _selector: {fileID: 177107632}
   _rigidbody: {fileID: 511996033}
-  _grabCenter: {fileID: 511996036}
   _grabTarget: {fileID: 0}
-  _velocityCalculator: {fileID: 0}
 --- !u!114 &371883568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7509,7 +7507,6 @@ Transform:
   m_Children:
   - {fileID: 1524886771}
   - {fileID: 2021026515}
-  - {fileID: 1653689899}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &457201102
@@ -12631,7 +12628,6 @@ MonoBehaviour:
   _useClosestPointAsGrabSource: 0
   _releaseDistance: 0
   _resetGrabOnGrabsUpdated: 1
-  _physicsGrabbable: {fileID: 0}
 --- !u!114 &675187407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12650,7 +12646,6 @@ MonoBehaviour:
   _data: {fileID: 0}
   _pointableElement: {fileID: 1623776860}
   _rigidbody: {fileID: 1623776861}
-  _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _scoringModifier:
     _positionRotationWeight: 0.5
@@ -12907,6 +12902,18 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _whenUnselectedEmpty:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenBeginHighlightWithObject:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenEndHighlightWithObject:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectedHoveredWithObject:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenUnselectedHoveredWithObject:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &693833688
@@ -13586,7 +13593,6 @@ MonoBehaviour:
   _gripCollider: {fileID: 13449415}
   _pinchPoint: {fileID: 793118126}
   _pinchCollider: {fileID: 339329689}
-  _velocityCalculator: {fileID: 0}
 --- !u!114 &725614720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15081,6 +15087,7 @@ MonoBehaviour:
   pathHeightAboveGround: 0.1
   cornerVisualizationPrefab: {fileID: 2874670000088497872, guid: a76558bfbbdf846e88427df69facd471, type: 3}
   isCornersVisible: 0
+  invalidPathTimeout: 10
 --- !u!114 &798593630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17783,6 +17790,9 @@ MonoBehaviour:
     _onLoadSuccess:
       m_PersistentCalls:
         m_Calls: []
+    _onFirstSampleReady:
+      m_PersistentCalls:
+        m_Calls: []
     _onPlaybackReady:
       m_PersistentCalls:
         m_Calls: []
@@ -19667,7 +19677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee10491ef6d5d1d49a270cf6b09bdc19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enableMipmapping: 0
+  _mipmapMode: 0
   _dynamicResolution: 1
   _redrawResolutionThreshold: 2147483647
   rectTransform: {fileID: 1055757394}
@@ -19675,13 +19685,13 @@ MonoBehaviour:
   manualRedraw: 0
   renderInterval: 1
   renderIntervalFrameOffset: 0
-  expensive: 0
+  superSample: 0
   layer: 5
   opacity: 2
   shape: 0
   curveRadius: 1
   overlapMask: 0
-  overlayType: 1
+  compositionMode: 1
   _overlayEnabled: 1
 --- !u!1 &1077439326
 GameObject:
@@ -28336,7 +28346,6 @@ MonoBehaviour:
   _useClosestPointAsGrabSource: 0
   _releaseDistance: 0
   _resetGrabOnGrabsUpdated: 1
-  _physicsGrabbable: {fileID: 0}
 --- !u!114 &1623776860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28359,6 +28368,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1623776861}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _forceKinematicDisabled: 0
 --- !u!54 &1623776861
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29220,68 +29230,6 @@ MonoBehaviour:
   maxScaleMultiplier: 5
   minScaleMultiplier: 1
   visualObject: {fileID: 0}
---- !u!1001 &1653689898
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 457201101}
-    m_Modifications:
-    - target: {fileID: 3717527311161463074, guid: 962a9dc8cb78ee74ea90fdf7d792261d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3717527311161463074, guid: 962a9dc8cb78ee74ea90fdf7d792261d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3717527311161463074, guid: 962a9dc8cb78ee74ea90fdf7d792261d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3717527311161463074, guid: 962a9dc8cb78ee74ea90fdf7d792261d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3717527311161463074, guid: 962a9dc8cb78ee74ea90fdf7d792261d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3717527311161463074, guid: 962a9dc8cb78ee74ea90fdf7d792261d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3717527311161463074, guid: 962a9dc8cb78ee74ea90fdf7d792261d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3717527311161463074, guid: 962a9dc8cb78ee74ea90fdf7d792261d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3717527311161463074, guid: 962a9dc8cb78ee74ea90fdf7d792261d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3717527311161463074, guid: 962a9dc8cb78ee74ea90fdf7d792261d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4386031602441736495, guid: 962a9dc8cb78ee74ea90fdf7d792261d, type: 3}
-      propertyPath: m_Name
-      value: MSET_DG9A54Q60ZC4
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 962a9dc8cb78ee74ea90fdf7d792261d, type: 3}
---- !u!4 &1653689899 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3717527311161463074, guid: 962a9dc8cb78ee74ea90fdf7d792261d, type: 3}
-  m_PrefabInstance: {fileID: 1653689898}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1656221880
 GameObject:
   m_ObjectHideFlags: 0
@@ -32603,7 +32551,6 @@ MonoBehaviour:
   _useClosestPointAsGrabSource: 0
   _releaseDistance: 0
   _resetGrabOnGrabsUpdated: 1
-  _physicsGrabbable: {fileID: 0}
 --- !u!114 &1911317042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32622,7 +32569,6 @@ MonoBehaviour:
   _data: {fileID: 0}
   _pointableElement: {fileID: 1623776860}
   _rigidbody: {fileID: 1623776861}
-  _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _scoringModifier:
     _positionRotationWeight: 0.5
@@ -33114,9 +33060,7 @@ MonoBehaviour:
   _data: {fileID: 0}
   _selector: {fileID: 725368691}
   _rigidbody: {fileID: 1578548157}
-  _grabCenter: {fileID: 1578548160}
   _grabTarget: {fileID: 0}
-  _velocityCalculator: {fileID: 0}
 --- !u!114 &1933646878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33473,7 +33417,6 @@ MonoBehaviour:
   _gripCollider: {fileID: 1509458431}
   _pinchPoint: {fileID: 147514848}
   _pinchCollider: {fileID: 1954408482}
-  _velocityCalculator: {fileID: 0}
 --- !u!114 &1950733360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36169,6 +36112,18 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _whenUnselectedEmpty:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenBeginHighlightWithObject:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenEndHighlightWithObject:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectedHoveredWithObject:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenUnselectedHoveredWithObject:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &2052231850
@@ -55652,6 +55607,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _monoscopic: 0
   _sharpenType: 0
+  _disableRecording: 0
   _enableDynamicResolution: 0
   minDynamicResolutionScale: 1
   maxDynamicResolutionScale: 1
@@ -55663,8 +55619,13 @@ MonoBehaviour:
   maxRenderScale: 1
   _headPoseRelativeOffsetRotation: {x: 0, y: 0, z: 0}
   _headPoseRelativeOffsetTranslation: {x: 0, y: 0, z: 0}
-  profilerTcpPort: 32419
-  expandMixedRealityCapturePropertySheet: 0
+  enableCoreMetricsRelease: 0
+  enableCoreMetricsDevelopment: 1
+  coreMetricVisibility:
+    visibleMemoryMetricStats: 0
+    visibleMemoryMetricGraphs: 0
+    visibleRenderMetricStats: 0
+    visibleRenderMetricGraphs: 0
   enableMixedReality: 0
   compositionMethod: 0
   extraHiddenLayers:
@@ -55704,6 +55665,7 @@ MonoBehaviour:
   requestEyeTrackingPermissionOnStartup: 0
   requestScenePermissionOnStartup: 0
   requestRecordAudioPermissionOnStartup: 0
+  requestPassthroughCameraAccessPermissionOnStartup: 0
   _localDimming: 1
   _trackingOriginType: 1
   usePositionTracking: 1
@@ -55717,6 +55679,8 @@ MonoBehaviour:
   SimultaneousHandsAndControllersEnabled: 0
   _readOnlyWideMotionModeHandPosesEnabled: 0
   wideMotionModeHandPosesEnabled: 0
+  _readOnlyFastMotionModeHandPosesEnabled: 0
+  fastMotionModeHandPosesEnabled: 0
   dynamicResolutionVersion: 1
 --- !u!114 &7079690332563745817
 MonoBehaviour:
